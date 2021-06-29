@@ -15,9 +15,25 @@ Una clase puede ser definida como un template, en el cual se definen sus atribut
 Ejemplo
 
 ```Java
-Public class Persona {
+public class Persona {
    private String nombre;
    private String apellido;
+}
+```
+
+**Constructores**
+
+Los constructores permiten instanciar una clase (crear un objeto).Los constructores pueden llevar parametros o no.
+
+Ejemplo de constructor vacio (sin parametros)
+```Java                                                                  
+public Persona() {}
+```
+Ejemplo de constructor con parametros
+```Java
+public Persona(String nombre, String apellido) {
+      this.nombre = nombre;
+      this.apellido = apellido;
 }
 ```
 
@@ -30,6 +46,17 @@ Los objetos pueden relacionarse entre si.Esta relacion se la conoce como colabor
  - Agregacion: Si una clase tiene como referencia a otra clase, esto se lo conoce como agregacion. Representa una relacion de HAS-A
    Ej: Una clase Empleado tiene como atributos nombre, id, edad, etc. Ademas tiene un objeto llamado direccion, el cual tiene sus propios atributos.
  - Composicion: Un objeto deja de existir si el objeto del cual depende es destruido. Ej: si una casa es destruida, sus habitaciones tambien dejaran de existir.
+
+**Herencia**
+
+Una clase puede heredar atributos y comportamientos de la clase padre, y ademas puede definir sus propios atributos y comportamientos.
+Existen 3 tipos de herencia.
+ * Simple: Una clase hereda de una sola clase padre.
+ * Multiple: Una clase hereda de mas de una clase.
+ * Multinivel: La herencia se da por niveles.
+ * Jerarquica:
+
+
  
  
 
