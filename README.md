@@ -47,15 +47,63 @@ Los objetos pueden relacionarse entre si.Esta relacion se la conoce como colabor
    Ej: Una clase Empleado tiene como atributos nombre, id, edad, etc. Ademas tiene un objeto llamado direccion, el cual tiene sus propios atributos.
  - Composicion: Un objeto deja de existir si el objeto del cual depende es destruido. Ej: si una casa es destruida, sus habitaciones tambien dejaran de existir.
 
-**Herencia**
+## 2.2 Herencia
 
 Una clase puede heredar atributos y comportamientos de la clase padre, y ademas puede definir sus propios atributos y comportamientos.
 Existen 3 tipos de herencia.
  * Simple: Una clase hereda de una sola clase padre.
- * Multiple: Una clase hereda de mas de una clase.
- * Multinivel: La herencia se da por niveles.
+ 
+ ![image](https://user-images.githubusercontent.com/40470742/123968044-42d7ff00-d98d-11eb-8afa-5a6e2899a643.png)
+ * Multiple: Una clase hijo hereda de mas de una clase padre.Ej: La clase cocodrilo hereda de animal terrestre y animal acuatico.
+ * Multinivel: La herencia se da por niveles.Ej: Elefante hereda de mamifero, que a su vez hereda de animal.
  * Jerarquica:
-
+ 
+ ![image](https://user-images.githubusercontent.com/40470742/123968843-00fb8880-d98e-11eb-9a78-6bdaf4362956.png)
+ 
+ * Hibrida
+ 
+ ![image](https://user-images.githubusercontent.com/40470742/123968934-1a043980-d98e-11eb-84e2-419199751159.png)
+ 
+ ### Clases Abstractas e Interfaces
+ 
+ **Clases Abstractas**
+  * Una clase abstracta es una clase que solo puede ser extendida, pero no instanciada (no se pueden crear objetos a partir de ellas).
+  * Pueden contener metodos abstractos y metodos concretos.
+  Ejemplo:
+  ```Java
+  public abstract class FiguraGeometrica {
+     public abstract int CalcularArea(); // los metodos abstractos solo definen su encabezado, no contiene mas codigo
+  }
+  ```
+ 
+ **Interfaces**
+  * Al igual que las clases abstractas, las intefaces no pueden ser instanciadas y solo se usan para definir metodos.
+  * Se usan para lograr herencia multiple (java no soporta herencia multiple, pero se puede solucionar usando interfaces).
+  ```Java
+  public interface Figura {
+     public void Dibujar(); // Las interfaces solo soportan metodos abstractos
+  }
+  ```
+  
+  ## 2.3 Patrones de Diseño
+  
+  **Que son los Patrones de Diseño?**
+  Los patrones de diseños son soluciones habituales a problemas que ocurren frecuentemente en el desarrollo del software. 
+  Se agrupan en 3 categorias:
+   * Creacionales: proporcionan mecanismos para crear objetos de forma limpia y flexible, favoreciendo la reutilizacion.
+   * Estructurales: brindan convenciones para el armado de estructuras.
+   * Comportamiento: tratan estrategias para implementar una comunicacion efectiva entre modulos y clases.
+   
+   ## 2.4 S.O.L.I.D
+   
+   **Que es SOLID?**
+   
+     * Single responsability: una clase debe tener solo una responsabilidad.
+     * Open-close: abierto para extension, cerrado para cambios.
+     * Lyskov substitution: una subclase puede ser reemplazada por otra de manera que no se altere el comportamiento.
+     * Interface segregation: interfaces con los metodos justos y necesarios. Evitar las interfaces multiproposito.
+     * Dependency injection: evitar el acoplamiento entre modulos.
+    
 
  
  
