@@ -1,6 +1,7 @@
 package com.tutorials;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Employee extends Person{
 
@@ -45,14 +46,14 @@ public class Employee extends Person{
     public void printAudit(StringBuilder buffer) {
         //Adding this line, the method will print the employee unique attributes, and the attributes of its parent class
         super.printAudit(buffer);
+    }
 
-        buffer.append("TaxpayerIdentificationNumber = ");
-        buffer.append(getTaxpayerIdNumber());
-        buffer.append(",");
-        buffer.append("EmployeeNumber = ");
-        buffer.append(getEmployeeNumber());
-        buffer.append(",");
-        buffer.append("Salary = ");
-        buffer.append(getSalary().toPlainString());
+    @Override
+    public String toString() {
+        return super.toString() + "Employee{" +
+                "taxpayerIdNumber='" + taxpayerIdNumber + '\'' +
+                ", employeeNumber='" + employeeNumber + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

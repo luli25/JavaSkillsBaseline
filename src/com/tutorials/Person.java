@@ -1,5 +1,6 @@
 package com.tutorials;
 
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class Person {
@@ -80,28 +81,24 @@ public class Person {
 
     /* Overloaded method example */
     public void printAudit(StringBuilder buffer) {
-        buffer.append("Firstname = ");
-        buffer.append(getFirstName());
-        buffer.append(",");
-        buffer.append("Lastname = ");
-        buffer.append(getLastName());
-        buffer.append(",");
-        buffer.append("Age = ");
-        buffer.append(getAge());
-        buffer.append(",");
-        buffer.append("Height = ");
-        buffer.append(getHeight());
-        buffer.append(",");
-        buffer.append("Weight = ");
-        buffer.append(getWeight());
-        buffer.append(",");
-        buffer.append("Gender = ");
-        buffer.append(getGender());
+        buffer.append(toString());
     }
 
     public void printAudit(Logger logger1) {
         StringBuilder sb = new StringBuilder();
         printAudit(sb);
         logger1.info(sb.toString());
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }
