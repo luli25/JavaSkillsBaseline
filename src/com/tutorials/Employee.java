@@ -1,7 +1,6 @@
 package com.tutorials;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 public class Employee extends Person{
 
