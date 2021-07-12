@@ -57,4 +57,22 @@ class EmployeeTest {
         l.info("Q: employee1 == employee2 ? A: " + (employee1 == employee2));
         l.info("Q: employee1.equals(employee2) ? A : " + employee1.equals(employee2));
     }
+
+    @Test
+    //Exceptions handling
+    public void exceptionsTesting() {
+        Logger logger = Logger.getLogger(Employee.class.getName());
+        //Employee employee1 = new Employee();
+        try {
+            Employee employee1 = null;
+            employee1.setFirstName("Cosme");
+            Employee employee2 = new Employee();
+            employee2.setFirstName("Cosme");
+            logger.info("Q: employee1 == employee2?      A: " + (employee1 == employee2));
+            logger.info("Q: employee1.equals(employee2)? A: " + employee1.equals(employee2));
+        } catch (Exception e) {
+            logger.severe("Caught exception: " + e.getMessage());
+        }
+
+    }
 }
